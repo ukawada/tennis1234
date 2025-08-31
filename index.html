@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ソフトテニスのホームページ</title>
+  <style>
+    /* --- 全体デザイン --- */
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2em;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    /* --- メインコンテンツ --- */
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    section {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      position: relative;
+      z-index: 2;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    section h2 {
+      margin-top: 0;
+      color: #2575fc;
+    }
+
+    /* --- 「目的」全体の背景ラッパー --- */
+    .about-background {
+      background: url("スクリーンショット 2025-08-31 082730.png") no-repeat center center / cover;
+      width: 100%;             /* 横幅いっぱい */
+      min-height: 400px;       /* 高さを確保（好きに調整可） */
+      padding: 80px 20px;      /* 内側余白 */
+      margin: 0;               /* 横の余白を消す */
+    }
+
+    /* 目的の中身を中央寄せ */
+    .about-background section {
+      max-width: 1000px;
+      margin: auto;
+      background: rgba(255,255,255,0.8); /* 半透明にして読みやすく */
+    }
+
+    /* --- フッター --- */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+      margin-top: 50px;
+    }
+  </style>
+
+  <!-- パスワード保護スクリプト -->
+  <script>
+    function checkPassword() {
+      var pass = prompt("パスワードを入力してください:");
+      if (pass !== "soft123") {  // ←ここでパスワード設定
+        alert("パスワードが違います。");
+        location.href = "about:blank";
+      }
+    }
+    window.onload = checkPassword;
+  </script>
+</head>
+<body>
+  <header>
+    <h1>ソフトテニスのホームページ</h1>
+    <nav>
+      <a href="#about">目的</a>
+      <a href="#services">予定表</a>
+    </nav>
+  </header>
+
+  <!-- 背景つきのラッパー（横幅いっぱい＆上に広げる） -->
+  <div class="about-background">
+    <section id="about">
+      <h2>目的</h2>
+      <p>予定表をなくす人がいるのでWEBサイトならなくさないと思い作りました</p>
+    </section>
+  </div>
+
+  <!-- 通常コンテナ -->
+  <div class="container">
+    <section id="services">
+      <h2>連絡、予定表</h2>
+      <p>連絡、８月の予定表</p>
+      <h1>９月の７日に新人戦があります</h1>
+      <p>８月３０日　１３～１７時</p>
+      <p>８月３１日　なし</p>
+      <p>９月１日　１６時～１８時３０分</p>
+
+      <!-- 予定表画像（クリックで拡大） -->
+      <a href="kodomo_tennissabuwositeiruotokonoko.png" target="_blank">
+        <img src="kodomo_tennissabuwositeiruotokonoko.png" alt="活動予定表" 
+             style="max-width:100%; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.2); cursor:pointer; margin-top:20px;">
+      </a>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 MySite. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
